@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>
+            axios API
+        </title>
+    </head>
+    <body>
+       <script src="./node_modules/axios/dist/axios.min.js"></script>
+        <script>
+            //GET method for npm 
+            axios.get('https://reqres.in/api/users?page=2')//api call
+            //axios.get('https://jsonplaceholder.typicode.com/posts/10') //api call
+            .then((response)=>console.log(response))
+            .catch((error)=>console.log(error))
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            put API
+        </title>
+    </head>
+    <body>
+
+        <script>
+            //put method 
+            const makeRequest=(method,url,data)=>{
+                    const xhr=new XMLHttpRequest();
+                    xhr.open(method,url);
+                    xhr.setRequestHeader('Content-type','application/json');
+                    xhr.onload=()=>{
+                        let data=xhr.response;
+                        console.log(JSON.parse(data));
+                    }
+                    xhr.onerror=()=>{
+                        console.log("error is here");
+                    }
+                    xhr.send(JSON.stringify(data)); 
+                }
+                const updateData=()=>{
+                    makeRequest('PUT','https://jsonplaceholder.typicode.com/posts/1',{
+                        id: 1,
+                        title: 'rubel',
+                        body: 'hossain',
+                        userId: 1,
+                    });
+                }
+                updateData();
+                
+        </script>
+    </body>
+</html>

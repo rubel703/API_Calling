@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            axios API
+        </title>
+    </head>
+    <body>
+       <script src="./node_modules/axios/dist/axios.min.js"></script>
+        <script>
+            //PUT method for npm 
+
+           /* axios.put('https://jsonplaceholder.typicode.com/posts/1',{ //api call
+                name: "Web Application",
+                job: "developer"
+            })*/ 
+
+            axios.put('https://reqres.in/api/users/3',{ //api call
+                name: "Web Application",
+                job: "developer"
+            })
+
+            .then((response)=>console.log(response))
+            .catch((error)=>console.log(error))
+            
+        </script>
+    </body>
+</html>

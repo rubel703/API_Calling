@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>
+            jquery API
+        </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+      
+        <script>
+            //add jquery library cdn
+            //ajax-asynchronous js and xml
+            //post method used jquery ajax
+            
+            var makeRequest=async(api,method,info)=>{
+                try{
+                var result=await $.ajax({
+                    url:api,
+                    method:method,
+                    data:info,
+                })
+                return result; 
+            } catch(error){
+                console.log("this is error "+error);
+            }
+                
+                //console.log(result);
+            }
+            /*var createData=()=>{
+                makeRequest("https://jsonplaceholder.typicode.com/posts","POST",{
+                    name:"Hossain Rubel",
+                    work:"Web Developer"
+                })
+                .then((response)=>{
+                    console.log(response);
+                })
+            }
+            createData(); */ 
+
+            //delete method used jquery ajax 
+            var deleteData=()=>{
+                makeRequest("https://jsonplaceholder.typicode.com/posts/10","delete")
+                .then((response)=>{
+                    console.log(response);
+                })
+            }
+            deleteData();
+        </script>
+    </body>
+</html>

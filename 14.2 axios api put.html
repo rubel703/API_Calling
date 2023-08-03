@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>axios API</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js" 
+        integrity="sha512-nnNHpffPSgINrsR8ZAIgFUIMexORL5tPwsfktOTxVYSv+AUAILuFYWES8IHl+hhIhpFGlKvWFiz9ZEusrPcSBQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+       
+        <script>
+           
+            //put method for cdn  //https://cdnjs.com/libraries/axios
+           axios.put("https://jsonplaceholder.typicode.com/posts/1",{
+            method:"put",
+            body:JSON.stringify({
+                name:"JavaScript",
+                job:"Developer",
+                userid:1,
+            }),
+           })
+           .then((response)=>console.log(response))
+           .catch((error)=>console.log(error));
+
+        </script>
+    </body>
+</html>

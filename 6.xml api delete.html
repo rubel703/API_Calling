@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>
+            delete API
+        </title>
+    </head>
+    <body>
+
+        <script>
+            //put method 
+            const makeRequest=(method,url,data)=>{
+                    const xhr=new XMLHttpRequest();
+                    xhr.open(method,url);
+                    xhr.setRequestHeader('Content-type','application/json');
+                    xhr.onload=()=>{
+                        let data=xhr.response;
+                        console.log(JSON.parse(data));
+                    }
+                    xhr.onerror=()=>{
+                        console.log("error is here");
+                    }
+                    xhr.send(JSON.stringify(data)); 
+                }
+                const deleteData=()=>{
+                    makeRequest('DELETE','https://jsonplaceholder.typicode.com/posts/1',{
+                    });
+                }
+                deleteData();
+                
+        </script>
+    </body>
+</html>

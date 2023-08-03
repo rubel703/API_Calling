@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            API
+        </title>
+    </head>
+    <body>
+
+        <script>
+            /* API calling method 
+            1.API calling in JS using XML HTTP request(old method) 
+            2.web API/fetch API
+            3.calling API using axios(popular method)
+            4.calling API using jQuery ajax 
+            //http request=get,post,put,delete,fetch
+            //get=get method diye backend theke data ana jay or deka jay
+            //post=post method diye backend modde data push kora hoy 
+            */ 
+
+            //event=onload(),onerror()
+            //property=response,responsText,responseType,responseURL,responseXML
+            //function=open(),send(),setRequestHeader()
+                const getData=()=>{
+                    const xhr=new XMLHttpRequest();
+                    xhr.open('GET','https://jsonplaceholder.typicode.com/posts');
+                    xhr.onload=()=>{
+                        let data=xhr.response;
+                        console.log(JSON.parse(data));
+                    }
+                    xhr.onerror=()=>{
+                        console.log("error is here");
+                    }
+                    xhr.send(); 
+                }
+                getData();
+        </script>
+    </body>
+</html>
